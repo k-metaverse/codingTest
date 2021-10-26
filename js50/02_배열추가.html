@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>2.배열추가</title>
+	<style>
+	body{display: flex; justify-content: center;}
+	.wrap{
+		border: 1px solid #000;
+		padding: 40px 40px 60px;
+	}
+	.example{background-color: rgb(225, 239, 248); padding: 20px 40px;}
+	.result{background-color: rgb(248, 223, 189); padding: 20px 40px;}
+	.hit{font-size: 10px;color: rgb(64, 40, 4);}
+	.hit_tit{color:white; background-color: rgb(90, 77, 77); padding:2px 10px}
+	.hit_aw{display: none;}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<h3 class="qusetion">
+			다음 배열에서 400, 500를 추가하는 code를 입력하세요.
+		</h3>
+		<p class="example">var nums = [100, 200, 300]</p>
+	   <div class="hit">
+			 <span class="hit_tit" onClick="hitShow()">힌트클릭</span>
+			 <span class="hit_aw">.splice(시작,삭제갯수,추가내용 ) 또는 .push(),shift() 또는 연결 concat()</span>
+		 </div>
+		<p class="result"></p>
+	</div>
+
+
+	<script>
+		var nums = [100, 200, 300];
+		var adds=[400,500]
+		var plus;
+		let result;
+		// 방법2 앞 추가
+		nums.push(400);
+		nums.push(500);
+
+		console.log(nums);
+		result=document.querySelector('.result');
+		result.innerText=nums;
+	
+		// 방법2 앞 추가
+	  //  nums.unshift(400);
+		//  nums.unshift(500);
+		// console.log(nums);
+		// result=document.querySelector('.result');
+		// result.innerText=nums;
+	
+    //방법3 연결
+		// plus=nums.concat(adds)
+		// console.log(plus);
+		// result=document.querySelector('.result');
+		// result.innerText=plus;
+
+		function hitShow(){
+			document.querySelector('.hit_aw').style.display="inline-block";
+		}
+	</script>
+	
+</body>
+</html>

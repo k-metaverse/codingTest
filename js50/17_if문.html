@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>17</title>
+	<style>
+	body{display: flex; justify-content: center;}
+	ul{list-style: decimal;}
+	pre{margin: 0; padding: 0;}
+	.wrap{
+		border: 1px solid #000;
+		padding: 40px 40px 60px;
+	}
+	.example{background-color: rgb(225, 239, 248); padding: 20px 40px;}
+	#result_wrap{background-color: rgb(248, 223, 189); padding: 20px 40px;}
+	.hit{font-size: 10px;color: rgb(64, 40, 4);}
+	.hit_tit{color:white; background-color: rgb(90, 77, 77); padding:2px 10px}
+	.hit_aw{display: none;}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<h3 class="qusetion">
+			유주는 놀이공원 아르바이트 중입니다. 그런데 놀이기구마다 키 제한이 있습니다.
+			유주가 담당하는 놀이기구는 키가 150cm 이상만 탈 수 있습니다.
+			
+			입력으로 키가 주어지면
+			키가 150이 넘으면 YES를 틀리면 NO를 출력하는 프로그램을 작성하세요.
+		</h3>
+<div class="example">
+<pre>
+</pre>
+</div>
+<div id="result_wrap">
+	<input type="text" placehoder="키를 입력하세요" value="" id="doInput">
+	<button onclick="doCheck()">이용여부 체크</button>
+</div>
+</div>
+	<script>
+	let doInput=document.getElementById('doInput');
+	function doCheck(){
+		
+		let height=Number(doInput.value);
+		console.log(check)
+		if(height>=150){
+			console.log("이용가능")
+		}else{
+			console.log("이용 불가능")
+		}
+	}
+
+</script>
+	
+</body>
+</html>

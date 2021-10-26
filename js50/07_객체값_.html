@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>6.변수명</title>
+	<style>
+	body{display: flex; justify-content: center;}
+	ul{list-style: decimal;}
+	pre{margin: 0; padding: 0;}
+	.wrap{
+		border: 1px solid #000;
+		padding: 40px 40px 60px;
+	}
+	.example{background-color: rgb(225, 239, 248); padding: 20px 40px;}
+	#result{background-color: rgb(248, 223, 189); padding: 20px 40px;}
+	.hit{font-size: 10px;color: rgb(64, 40, 4);}
+	.hit_tit{color:white; background-color: rgb(90, 77, 77); padding:2px 10px}
+	.hit_aw{display: none;}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<h3 class="qusetion">
+			자바스크립트 객체를 다음과 같이 만들었다. 
+			출력값을 입력하시오. (출력값은 공백을 넣지 않습니다. )
+		</h3>
+<div class="example">
+<pre>
+var d = {
+	'height':180,
+	'weight':78,
+	'weight':84,
+	'temperature':36,
+	'eyesight':1
+};
+
+console.log(d['weight']);
+</pre>
+
+
+</div>
+<p id="result">예약어와 숫자시작 안됨</p>
+	</div>
+	<script>
+	var answer;
+	var d = {
+    'height':180,
+    'weight':78,
+    'weight':84,
+    'temperature':36,
+    'eyesight':1
+	};
+
+console.log(d['weight']);
+answer=d['weight'];
+document.getElementById('result').innerText=answer;
+	</script>
+	
+</body>
+</html>
