@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>27 객체</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+	<h3 class="qusetion">
+   <!-- 질문 -->
+	 첫번째 입력에서는 학생의 이름이 공백으로 구분되어 입력되고,
+	 두번째 입력에서는 그 학생의 수학 저뭇가 공백으로 구분되어 주어진다.
+	 
+	 두 개를 합쳐 학생의 이름이 key이고 value가 수학 점수인 객체를 출력해주세요
+	</h3>
+	<div class="example">
+    재석 세찬 <br>
+		70 90
+	</div>
+	<div class="aw_wrap">
+		<div class="aw">
+			<!-- answer -->
+
+		</div>
+	</div>
+</div>
+<!-- js -->
+<script>
+	const aw=document.querySelector('.aw')
+	// const keys=["재석","세찬"]
+	// const values=["80","90"]
+	const keys=prompt().split(' ');
+	const values=prompt().split(' ');
+	//.split('')  문자열을 공백 기준으로 배열로 만듬
+	console.log(keys)
+	
+	let obj={};
+
+	for(let i=0; i<keys.length;i++){
+		obj[keys[i]]=values[i]
+
+
+	}
+	console.log(obj);
+
+	aw.innerText=JSON.stringify(obj)
+	aw.innerHTML+='<br>'
+//객체를 문자열로 함수
+	function objToString (obj) {
+    var str = '';
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            str += p + '::' + obj[p] + '\n';
+        }
+    }
+    return str;
+}
+aw.innerText+=objToString(obj)
+
+</script>
+	
+</body>
+</html>

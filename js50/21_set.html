@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>20 몫과 나머지</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+	<h3 class="qusetion">
+   <!-- 질문 -->
+	 다음 중 set을 만드는 방법으로 올바른 것을 모두 고르시오.
+
+	</h3>
+	<div class="example">
+		<ul>
+			<li>var x={1,2,3,4,5,6,7}</li>
+			<li>var x=0;</li>
+			<li>var x=new Set('javascirpt')</li>
+			<li>var x=new Set(rang(5))</li>
+			<li>var x=new Set()</li>
+		</ul>
+		<pre>
+			set은 중복되지 않는 데이터를 저장하는 데이터 구조.
+			const list=[1,2,2,3,4,5,5,6]
+		</pre>
+	</div>
+	<div class="aw_wrap">
+		<div class="aw">
+			<!-- answer -->
+3 var x=new Set('javascirpt')<br>
+5 var x=new Set()
+		</div>
+	</div>
+</div>
+<!-- js -->
+<script>
+const list=[1,2,2,3,4,5,5,6]
+let setVal=new Set(list);
+console.log(setVal+'/'+typeof(setVal)) //1,2,3,4,5,6
+//add(),delete(),has()
+console.log('add:'+setVal.add(7))
+console.log(setVal) // 1,2,3,4,5,6,7
+console.log('delete:'+setVal.delete(2)) //true
+console.log(setVal) //1,3,4,5,6,7
+console.log('has:'+setVal.has(2)) //false
+console.log(setVal)
+</script>
+	
+</body>
+</html>
