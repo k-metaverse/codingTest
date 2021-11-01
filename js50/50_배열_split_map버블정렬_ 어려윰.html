@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>35</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+	<h3 class="qusetion">
+   <!-- 질문 -->
+	 버블정렬은 두 인접한 원소를 검사하여 정렬하는 방법을 말함. 
+	 시간 복잡도는 느리지만 코드가 단순하기 때문에 자주 사용.
+	</h3>
+	<div class="example">
+<pre>
+function bubble(arr){
+	let result=arr.slice();
+	for(let i=0; i<result.length- 1;i++){
+		for( /*빈칸채우기*/ ){
+			if(result[j]>result[j+1]){
+				// 빈칸 채우기
+			}
+		}
+	}
+	return result
+}
+const items=prompt('입력해주세요').split('').map((n)=>{
+	return parseInt(n,10)
+})
+console.log(bubble(items))
+</pre>
+	</div>
+	<div class="aw_wrap">
+		<div class="aw">
+			<!-- answer -->
+
+		</div>
+	</div>
+</div>
+<!-- js -->
+<script>
+function bubble(arr){
+	let result=arr.slice();
+	//slice(index, index까지) 배열 편집. 첫번째 ~두번째 indx(미포함). 새로운 배열로 반환. arr변함없음
+//9 5 1 2 6 7 -각각 서로 비교
+	for(let i=0; i<result.length-1;i++){
+		for( let j=0; j<result.length-i-1;j++){
+			if(result[j]>result[j+1]){
+				let value=result[j];
+				result[j];=result[j+1]
+				result[j-1]=value
+			}
+		}
+	}
+	return result
+}
+// const items=prompt('입력해주세요').split('').map((n)=>{
+// 	return parseInt(n,10)
+// })
+//.split(' ') 빈 공백을 기준으로 문자열->배열
+//.map()각각의 원소를 리턴해줌. 10진수로
+const items="9 5 1 2 6 7".split(' ').map((n)=>{
+	return parseInt(n,10)
+})
+console.log(bubble(items))
+</script>
+	
+</body>
+</html>

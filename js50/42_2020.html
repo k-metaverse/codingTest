@@ -12,8 +12,9 @@
 <div class="wrap">
 	<h3 class="qusetion">
    <!-- 질문 -->
-	 놀이기구를 타다. 무게 제한.
-	 몇명을 탈 수 있을까요?
+	 2022년 1월1일은 몇요일일까요?
+	 요일 sun mon tue wed thu fri sat
+	 2020년 윤년. 
 	
 	</h3>
 	<div class="example">
@@ -28,21 +29,20 @@
 </div>
 <!-- js -->
 <script>
-	const weightLimit="100";
-	const memberCount="5"
-	let count=0;
-	let totalWeight=0;
+const day=["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+const moth="5";
+const date="5";
 
-	for(let i=0; i<memberCount;i++){
-		// totalWeight+=parseInt("50",10);//10진수
-		totalWeight+=parseInt(prompt("몸무게 입력"),10);//10진수
-		console.log(totalWeight);
-		if(totalWeight<=weightLimit){
-			count++
-		}
-		console.log(count)
-	}
-	
+function solution(a,b){
+ //데이트 생성자 new Date(). 매개변수로 표현식 가능
+ const theDay=new Date(`2020-${a}-${b}`);
+ theDay.getDay();//날의 요일정보를 숫자로 반환 0->일요일
+ console.log(theDay)
+ console.log( theDay.getDay())
+ console.log( day[theDay.getDay()])
+
+}
+solution(moth,date)
 </script>
 	
 </body>

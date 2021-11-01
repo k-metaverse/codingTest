@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>35</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+	<h3 class="qusetion">
+   <!-- 질문 -->
+	 2제곱, 3제곱, 4제곱을 할 수 있는 fatory 함수를 만드시오
+	</h3>
+	<div class="example">
+		function one(n){
+			function two(){
+			 //코드작성
+			}
+			return two
+	 }
+	 const a=one(2);
+	 const b=one(3);
+	 const c=one(4);
+	 console.log(a(10))
+	 console.log(b(10))
+	 console.log(c(10))
+	</div>
+	<div class="aw_wrap">
+		<div class="aw">
+			<!-- answer -->
+
+		</div>
+	</div>
+</div>
+<!-- js -->
+<script>
+
+	//매개변수를 통해 다른 기능을 하는 factory함수
+function one(n){
+   function two(x){
+    //코드작성
+     return Math.pow(x,n) 
+		 //Math.pow(n) x의 n제곱 함수
+   }
+   return two
+}
+const a=one(2);
+const b=one(3);
+const c=one(4);
+
+console.log(a)
+console.log(b)
+console.log(c)
+
+console.log(a(10))
+console.log(b(10))
+console.log(c(10))
+</script>
+	
+</body>
+</html>

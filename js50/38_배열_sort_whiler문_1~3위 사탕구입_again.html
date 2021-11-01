@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>35</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+	<h3 class="qusetion">
+   <!-- 질문 -->
+	 호준이 아르바이트로 영어 학언에 단어 시험지를 채점하는일.
+	 호준이가 일하는 학원은 매법1~3위에게 사땅을 준다.
+	 사탕을 사려고 한다.
+	 1위~3위 학생은 여러명일 수 있고 1~3위 학생 중 중복되는 학생까지 포함하여 사탕을 사기로 한다.
+	 학생들의 점수를 공백으로 구분하여 입력을 받고 사탕을 받을 학생의 수 출력.
+	</h3>
+	<div class="example">
+입력:97,86,75,66,55,97,85,97,97,95
+출력:6
+	</div>
+	<div class="aw_wrap">
+		<div class="aw">
+			<!-- answer -->
+
+		</div>
+	</div>
+</div>
+<!-- js -->
+<script>
+const scores=["97","86","75","86","66","55","97","85","97","97","95"]	
+scores.sort(function(a,b){
+	return a-b
+})
+console.log(scores)
+let top3=[]
+let count=0;
+while(top3.length<4){
+	let value=scores.pop();
+
+	if(!top3.includes(value)){
+		top3.push(value);
+	}
+	//.includes(value)  value값이 있다면 true, 없다면 flase
+	count++;
+}
+console.log(top3)
+console.log(count-1)
+</script>
+	
+</body>
+</html>

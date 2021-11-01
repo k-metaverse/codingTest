@@ -12,12 +12,12 @@
 <div class="wrap">
 	<h3 class="qusetion">
    <!-- 질문 -->
-	 놀이기구를 타다. 무게 제한.
-	 몇명을 탈 수 있을까요?
+	 순서가 없는 10개 숫자가 공백으로 구분되어 준어진다. 주어진 숫자를 중 최대값을 반환.
 	
 	</h3>
 	<div class="example">
-
+10,9,8,7,6,5,4,3,2,
+10
 	</div>
 	<div class="aw_wrap">
 		<div class="aw">
@@ -28,21 +28,14 @@
 </div>
 <!-- js -->
 <script>
-	const weightLimit="100";
-	const memberCount="5"
-	let count=0;
-	let totalWeight=0;
-
-	for(let i=0; i<memberCount;i++){
-		// totalWeight+=parseInt("50",10);//10진수
-		totalWeight+=parseInt(prompt("몸무게 입력"),10);//10진수
-		console.log(totalWeight);
-		if(totalWeight<=weightLimit){
-			count++
-		}
-		console.log(count)
-	}
-	
+let result="10 9 8 7 6 5 4 3 2 1"
+result=result.split(" ").map((n)=>{
+	return parseInt(n,10)
+})
+//map() 매개변수= 각 배열의 원소에 순환 새로운 배열로 반환
+console.log(result)// 정수 배열로 변환
+result.sort((a,b)=>{return b-a})
+console.log(result[0])
 </script>
 	
 </body>

@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>35</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+	<h3 class="qusetion">
+   <!-- 질문 -->
+	 새 학기를 맞아 호준이네 반 반장선거를 한다. 그런데 표를 하나씩 개표하는 과정이 번거로워 학생들이 뽑은 후보들을 입력받아 뽑힌 학생의 이름과 받은 표 수를 출력하도록 하자.
+
+	</h3>
+	<div class="example">
+대상:재석,종국,세찬,하하
+출력: 세찬 총 3표로 반장이 되었습니다.
+	</div>
+	<div class="aw_wrap">
+		<div class="aw">
+			<!-- answer -->
+
+		</div>
+	</div>
+</div>
+<!-- js -->
+<script>
+	const aw=document.querySelector('.aw')
+	const ary=["재석","재석","종국","세찬","세찬","세찬"]
+	let result={}//초기화 객체 데이터 선언
+	let winner=""//초기화 문자열 데이터 선언
+	
+	for( let index in ary){
+		let val=ary[index] //재석  종국 세찬 하하
+		result[val]=result[val]===undefined?1:result[val]=result[val]+1
+	}
+	console.log(result)
+	winner=Object.keys(result).reduce(function(a,b){
+		console.log(a,b)
+		return result[a]>result[b]?a:b
+	}) 
+	console.log(winner+":"+result[winner])//
+	aw.innerHTML=` 총 ${result[winner]}표로 ${winner}이 반장이 되었습니다.`
+	//	Object.keys(result)키값만 배열로 반환
+	//.reduce(function(a,b){}) 하나나나 순환하면서 중첨으로 두개씩 비교해서 조건에 만족한것 
+//{재석:undefined}
+	//{재석:1}
+	//{재석:2}
+//{종국:undefined}
+	//{종국:1}
+//{세찬:undefined}
+	//{세찬:1}
+	//{세찬:2}
+
+
+</script>
+	
+</body>
+</html>

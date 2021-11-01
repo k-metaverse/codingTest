@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>35</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+	<h3 class="qusetion">
+   <!-- 질문 -->
+	중복 데이터를 삭제하여 실제 접수 명단이 몇명인지 알고 싶다
+	실제 접수 인원
+	<div class=""></div>
+	
+	</h3>
+	<div class="example">
+		const people={
+			유재석:"0101234567",
+			하하:"0104567890",
+			세찬:"0109871234",
+			유재석:"0101234567",
+			유재석:"0101234567",
+			유재석:"0101234567",
+
+			세찬:"0109871234"
+		}
+
+	</div>
+	<div class="aw_wrap">
+		<div class="aw">
+			<!-- answer -->
+
+		</div>
+	</div>
+</div>
+<!-- js -->
+<script>
+		const people={
+			유재석:"0101234567",
+			하하:"0104567890",
+			세찬:"0109871234",
+			유재석:"0101234567",
+			유재석:"0101234567",
+			유재석:"0101234567",
+
+			세찬:"0109871234"
+		}
+//Set()객체- 중복 데이터 제거
+let result=new Set();
+for(let key in people){
+	result.add(people[key]);
+}
+console.log(result.size)
+</script>
+	
+</body>
+</html>

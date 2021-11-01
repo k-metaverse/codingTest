@@ -12,10 +12,10 @@
 <div class="wrap">
 	<h3 class="qusetion">
    <!-- 질문 -->
-	
+	 문자열이 주어지면 대문자오 ㅏ소문자를 바꿔서 출력하는 프로그램을 작성하세요.
 	</h3>
 	<div class="example">
-
+AABBCCDD->aabbccdd
 	</div>
 	<div class="aw_wrap">
 		<div class="aw">
@@ -26,7 +26,18 @@
 </div>
 <!-- js -->
 <script>
-	
+const str="AABBCCDD";
+let arr=[];
+for(let i=0; i<str.length;i++){
+	if(str[i]===str[i].toUpperCase()){
+		arr.push(str[i].toLowerCase())
+	}else{
+		arr.push(str[i].toUpperCase())
+	}
+}
+console.log(arr.join(""))
+//배열의 원소를 문자열로 변환.join("")
+
 </script>
 	
 </body>
