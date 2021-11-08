@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>fadeInOut_제자리에서 겹침</title>
+	<style>
+img{vertical-align: top; font-size: 0;}
+.bnr_wrap{display: flex;}
+.bnr{margin: 50px;}
+.sliderWrap{width: 310px;height: 175px;position: relative;border: 1px solid rgb(218, 218, 218);
+overflow: hidden;
+/* background:url(img/bnr4.png) no-repeat left top; */
+}
+
+.sliders>a{	position: absolute; top:0; }
+
+/* 가로 슬라이드 */
+.sliders.bnr2>a{
+	left:0%; opacity:0; 
+	
+	animation: slide2 10s linear infinite;
+}
+
+.sliders.bnr2>a:nth-child(2){animation-delay:3.5s;}
+.sliders.bnr2>a:nth-child(3){animation-delay:7s;}
+
+@keyframes slide2{
+	0%{opacity:0; visibility: visible; z-index:5;}
+	5%{opacity:1;}
+
+	35%{opacity:1; z-index: 0;} /*5% 자연스럽게 연결*/
+  40%{opacity:0;  visibility: hidden;}
+
+	100%{opacity:0; }
+}
+
+
+.explain{
+	margin: 50px;
+}
+.info{margin: 50px;}
+
+	</style>
+</head>
+<body>
+
+<div class="bnr_wrap">
+
+<!-- banner2 leftFadeInOut-->
+	<div class="bnr">
+		<h4>slider_fadeInOut_재자리에서 겹침</h4>
+		<div class="sliderWrap">
+			<div class="sliders bnr2">
+				<a href="http://www.naver.com" target="_blank"><img src="img/bnr1.png" alt=""></a>
+				<a href="http://www.daum.net" target="_blank"><img src="img/bnr2.png" alt=""></a>
+				<a href="http://kakao.com" target="_blank"><img src="img/bnr3.png" alt=""></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="explain">
+  1번 배너: 네이버 링크<br>
+  2번 배너: 다음 링크<br>
+  3번 배너: 카카오 링크<br>
+</div>
+<hr>
+
+<div class="info">
+	<h2> cross fadeInOut-제자리</h2>
+	<p>animation-delay의 3등분해줌.</p>
+	<img src="img/info2.png" alt="">
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>slider_leftRight</title>
+	<style>
+img{vertical-align: top;}
+.bnr_wrap{display: flex;}
+.bnr{margin: 50px;}
+.sliderWrap{width: 310px;height: 175px;position: relative;border: 1px solid rgb(218, 218, 218);
+overflow: hidden;
+}
+/* 세로슬라이드 */
+.sliders{
+	position: absolute; top:0; left:0;
+}
+/* 가로슬라이드 top */
+.sliders.bnr1{
+	width: 300%; 
+	display: flex;  
+	animation:slide1 10s linear infinite;
+}
+.sliders.bnr2{
+	width: 100%;  
+	animation:slide2 10s linear infinite;
+}
+
+/* 가로 슬라이드 */
+@keyframes slide1{
+0%{left:0}
+30%{left:0}
+34%{left:-100%}
+64%{left:-100%}
+70%{left:-200%}
+95%{left:-200%}
+100%{left:0}
+}
+
+/* 세로 슬라이드 */
+@keyframes slide2{
+0%{top:0}
+30%{top:0}
+34%{top:-100%}
+64%{top:-100%}
+70%{top:-200%}
+95%{top:-200%}
+100%{top:0}
+}
+/* 
+		animation-name: 애니메이션이름; 
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+		animation-fill-mode:forwards; 
+		animation-fill-mode
+		: 시작되기 전이나 끝나고 난 후 어떤 값이 적용될지 지정합니다.
+		애니메이션이 끝난후 처음상태로? 끝난 상태로?
+		기본적으로 사용되는 것들 : none,forwards,backwards,both,initial,inherit*/
+	</style>
+</head>
+<body>
+	<div class="bnr_wrap">
+<!-- banner1 가로형-->
+	<div class="bnr">
+		<h4>slider_leftRight</h4>
+		<div class="sliderWrap ">
+			<div class="sliders bnr1">
+				<a href="#none"><img src="img/bnr1.png" alt=""></a>
+				<a href="#none"><img src="img/bnr2.png" alt=""></a>
+				<a href="#none"><img src="img/bnr3.png" alt=""></a>
+			</div>
+		</div>
+	</div>
+<!-- banner2 세로형-->
+	<div class="bnr">
+		<h4>slider_topBottom</h4>
+		<div class="sliderWrap">
+			<div class="sliders bnr2">
+				<a href="#none"><img src="img/bnr1.png" alt=""></a>
+				<a href="#none"><img src="img/bnr2.png" alt=""></a>
+				<a href="#none"><img src="img/bnr3.png" alt=""></a>
+			</div>
+		</div>
+	</div>
+		
+</div>
+
+</body>
+</html>
