@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>제이쿼리-슬라이드(가로/세로/크로스페이)</title>
+    <link rel="stylesheet" href="css/style1.css">
+    <script src="script/jquery-1.12.4.js"></script>
+    <script src="script/custom.js"></script>
+
+</head>
+<body>  
+<span id="a"></span>
+
+<div class="container">
+    <!-- Slide Animation -->
+    <div class="sliderWrap">
+        <div class="slides">
+            <a href="#none" data-num="1"><img src="images/client-01.jpg" alt="slide1"></a>
+            <a href="#none" data-num="2"><img src="images/client-02.jpg" alt="slide2"></a>
+            <a href="#none" data-num="3"><img src="images/client-03.jpg" alt="slide3"></a>
+        </div>
+    </div>
+    <!-- Slide Animation -->   
+<p class="resulte"></p>
+</div>
+<script>
+// 투명도 슬라이드만
+$('.slide div>a').click(function(){
+    let $n=$(this).attr('data-num');
+    $('.resulte').text($n);
+});
+</script>
+</body>
+<script>
+let target=document.getElementById('a');
+function clock(){
+    let date1 =new Date();
+    target.innerHTML=date1.toLocaleTimeString()
+}
+clock()
+setInterval(clock,1000)
+</script>
+</html>

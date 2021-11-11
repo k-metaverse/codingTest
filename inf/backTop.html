@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>backTop</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+	<script src="js/fontawesome.min.js"></script>
+	<style>
+	#wrap{height: 5000px; width: 400px; padding: 20px;
+		background-color: rgb(248, 236, 236);}
+	.top{
+		width: 40px;height: 40px; 
+		background-color: rgb(49, 52, 52); color:#fff;
+		border-radius: 20px;
+		text-align: center;
+		position: fixed;
+		right: 30px; bottom:40px;
+		opacity:0;
+		visibility: hidden;
+		transition-property: backgorund, opacity, visibility, bottom;
+		transition-duration: 1s;
+		z-index: 999;
+	}
+	.top::after{
+		content:"\f106";
+		font-family:FontAwesome;
+		font-size: 1.5rem;
+		line-height: 1.5;
+		color:white;
+	}
+	.top.show{
+		bottom:30px;
+		opacity:1;
+		visibility:visible;
+		background-color:rgb(4, 147, 236)
+	}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae facilis inventore qui est nemo delectus dignissimos deserunt, quisquam culpa officia quibusdam nostrum enim aperiam ea repellendus illum, blanditiis magni eaque aspernatur, aut asperiores distinctio eveniet. Quia, nobis quae excepturi cumque tempore corrupti optio? Dignissimos atque reprehenderit laboriosam error dolor et aut saepe pariatur! Neque nobis veritatis sed, illum unde velit voluptates, et quibusdam inventore veniam consequatur ipsam molestias molestiae alias labore dolorum optio ullam quam iure ipsa, explicabo expedita autem? Ipsam at fugit quae ipsa reprehenderit natus, doloribus, dicta voluptatum excepturi cupiditate id! Iusto quaerat quos possimus vero laboriosam nulla culpa voluptatem, ducimus, dolore esse ex saepe explicabo tenetur quidem cumque asperiores deserunt autem amet! Fugiat dolor rem ad. Ea sed exercitationem earum a quidem sunt commodi omnis culpa ex corporis. Quisquam ipsa ullam veniam dolor dolore cupiditate deserunt accusantium recusandae reiciendis officiis necessitatibus et aut, laudantium ut? Reprehenderit quas at eos ducimus, ipsum blanditiis iste dolorum libero aut nisi ex, sint aliquam perspiciatis sapiente? Quo eaque quos, corrupti quis soluta, ad dignissimos laborum impedit sit accusamus dolor aperiam, magnam necessitatibus assumenda ea sint. Minus dolore illum voluptatum voluptate possimus asperiores hic? Numquam, et quaerat accusamus unde reprehenderit deserunt porro.
+	</div>
+	<a href="#none" class="top"></a>
+	<script>
+// const backTop=document.getElementsByClassName('top')[0];
+const backTop=document.querySelector('.top');
+window.addEventListener('scroll',checkScroll);
+backTop.addEventListener('click',moveTop);
+function checkScroll(){
+	// 윈도우에 있는 얼마나 수직 스크롤 했는지
+	let pageYoffset=window.pageYOffset;
+	if(pageYoffset!==0){
+		backTop.classList.add('show')
+	}else{
+		backTop.classList.remove('show')
+	}
+}
+function moveTop(){
+	if(window.pageYOffset>0){
+		//부드럽게 window.scrollTo(top:0, behavior:'smooth')
+		window.scrollTo({top:0, behavior:'smooth'})
+	}
+}
+	</script>
+
+</body>
+
+</html>

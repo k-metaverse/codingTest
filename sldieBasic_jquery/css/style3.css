@@ -1,0 +1,44 @@
+@charset "utf-8";
+body {margin: 0;
+}
+img{width: 100%; vertical-align: top}
+.container {
+    border: 1px solid rgb(133, 131, 131);
+    width: 800px;
+    margin: 0 auto;
+}
+/* 모듈제작-제이쿼리-슬라이드(가로) */
+.slide {
+    position: relative;
+    width:300px; height:300px;
+    /* overflow: hidden; */
+    margin: 0 auto;   
+}
+.slide > div a {
+    width:100%; 
+    position: absolute;top:0;left:0;   
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+   /* animation:mv 10s linear infinite; */
+}
+/* @keyframes mv {
+    0%{opacity:0;}
+    5%{opacity:1; visibility: visible;}
+    35%{opacity:1;}
+    40%{opacity:0; visibility: hidden;}
+    100%{opacity:0;}
+} */
+/* .slide > div a:nth-child(1){animation-delay:0}
+.slide > div a:nth-child(2){animation-delay:3.5s}
+.slide > div a:nth-child(3){animation-delay:7s} */
+
+.slide > div a.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+

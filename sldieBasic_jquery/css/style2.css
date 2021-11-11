@@ -1,0 +1,40 @@
+@charset "utf-8";
+body {margin: 0;
+}
+img{width: 100%; vertical-align: top}
+.container {
+    border: 1px solid rgb(133, 131, 131);
+    width: 800px;
+    margin: 0 auto;
+}
+
+/* 모듈제작-제이쿼리-슬라이드(가로) */
+.slide {
+    position: relative;
+    width:300px; height:300px;
+    overflow: hidden;
+    margin: 0 auto;   
+}
+.slide > div {
+    width:100%; height: 300%;
+    position: absolute;top:0;left:0;   
+    border: 1px solid #000;  
+    /* animation:mv 10s linear infinite; */
+}
+/* @keyframes mv {
+    0%{top:0;}
+    30%{top:0;}
+    35%{top:-100%;}
+    65%{top:-100%;}
+    70%{top:-200%;}
+    97%{top:-200%;}
+    100%{top:0;}  
+} */
+.slide > div a {
+    display:block;
+   height: 33.333%;  
+}
+
+
+
+

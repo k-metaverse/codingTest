@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>slider_leftRight</title>
+	<script src="script/jquery-1.12.4.js"></script>
+	<style>
+img{vertical-align: top;}
+.bnr_wrap{display: flex;}
+.bnr{margin: 50px;}
+.sliderWrap{
+	width: 310px; height: 175px;
+	position: relative; overflow: hidden;
+	border: 1px solid rgb(218, 218, 218);
+}
+/* 공통 */
+.sliders{
+	position: absolute; top:0; left:0;
+}
+/* 가로슬라이드 right-left*/
+.sliders.bnr1{
+	display: flex;  
+}
+.sliders.bnr2{
+
+}
+</style>
+</head>
+<body>
+<div class="bnr_wrap">
+<!-- banner1 가로형-->
+<div class="bnr">
+	<h4>slider_leftRight</h4>
+	<div class="sliderWrap ">
+		<div class="sliders bnr1">
+			<a href="#none"><img src="img/bnr1.png" alt=""></a>
+			<a href="#none"><img src="img/bnr2.png" alt=""></a>
+			<a href="#none"><img src="img/bnr3.png" alt=""></a>
+		</div>
+	</div>
+</div>
+<!-- banner2 세로형-->
+<div class="bnr">
+	<h4>slider_topBottom</h4>
+	<div class="sliderWrap">
+		<div class="sliders bnr2">
+			<a href="#none"><img src="img/bnr1.png" alt=""></a>
+			<a href="#none"><img src="img/bnr2.png" alt=""></a>
+			<a href="#none"><img src="img/bnr3.png" alt=""></a>
+		</div>
+	</div>
+</div>
+	
+</div>
+<script>
+$(function(){
+	let num=0;
+		let $slide=$('.sliders>a');
+	let slideLeng=$slide.length;
+	let pos1=0;
+	let $bnr1=$('.bnr1');
+	let pos2=0;
+	let $bnr2=$('.bnr1');
+
+
+
+	console.log(slideLeng);
+	console.log('num:'+num);
+
+	// bnr1
+	$bnr1.css('width',100*slideLeng+'%');
+	$bnr1.animate({'left':pos1+'%'},3000);
+	setInterval(function(){
+        if(num < slideLeng-1) {
+            num++;
+        }
+        else {
+            num = 0;
+        }   
+        pos1=-100*num;
+        $bnr1.animate({'left':pos1+'%'},1000)		
+    },3500)
+
+	// bnr2
+	let hig=310;
+	$bnr2.css('height',hig);
+	$bnr2.animate({'top':pos2+'%'},3000);
+	setInterval(function(){
+        if(num < slideLeng-1) {
+            num++;
+        }
+        else {
+            num = 0;
+        }   
+        pos2=-hig*num;
+        $bnr2.animate({'top':pos2+'%'},1000)		
+    },3500)
+	})
+
+</script>
+</body>
+</html>

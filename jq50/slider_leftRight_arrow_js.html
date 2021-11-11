@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>slider_leftRight</title>
+	<script src="script/jquery-1.12.4.js"></script>
+	<style>
+img{vertical-align: top;}
+.bnrs_wrap{display: flex;}
+.bnrs_wrap>div{margin: 10px;}
+/* leftRight */
+.bnr1 .sliderTrack{
+	position: relative; overflow: hidden;
+	width: 310px; height: 175px;
+	border: 1px solid rgb(218, 218, 218);
+}
+.bnr1 .sliders{
+	display: flex;  
+	position: absolute; top:0; left:0;
+	-webkit-transition:left 0.5s ease-in;
+	transition:left 0.5s ease-in;
+}
+.bnr1 .btns{
+	display: flex; 	justify-content:space-between; align-items: center;
+	position: absolute; top:50%; left:0; 
+	width: 100%; transform: translateY(-50%);
+}
+button{ cursor:pointer; background: transparent; border:solid 1px #ddd; width: 24px; height: 24px;text-align: center; padding: 0;}
+button>img{width: 100%;}
+
+</style>
+</head>
+<body>
+<div class="bnrs_wrap">
+	<!-- bnr1 leftRight-->
+	<div class="bnr1">
+		<h4>slider_leftRight</h4>
+		<div class="sliderTrack ">
+			<div class="sliders">
+				<a href="#none"><img src="img/bnr1.png" alt=""></a>
+				<a href="#none"><img src="img/bnr2.png" alt=""></a>
+				<a href="#none"><img src="img/bnr3.png" alt=""></a>
+				<a href="#none"><img src="img/bnr4.png" alt=""></a>
+			</div>
+			<!-- btns-->
+			<div class="btns">
+				<button class="btnLeft"><img src="img/leftArrow.svg" alt=""></button>
+				<button class="btnRight"><img src="img/rightArrow.svg" alt=""></button>
+			</div>
+		</div><!--e:sliderWrap-->
+	</div>
+	
+</div><!--e:bnrs_wrap-->
+<script>
+const slide=document.querySelectorAll('.sliders a');
+const slideCount=slide.length; //3
+const bnr1=document.querySelector('.sliders');
+// btn
+const btnLeft=document.querySelector('.btnLeft');
+const btnRight=document.querySelector('.btnRight');
+let currentIndex=0;
+let leftValue=0;
+
+	console.log(slideCount);
+	// bnr1
+	bnr1.style.width=(100*slideCount)+'%'
+	
+function movLeft(idx){
+	bnr1.style.left=-(100*idx)+'%'
+	currentIndex=idx;  
+}
+btnRight.addEventListener('click',function(){
+	if(currentIndex<slideCount-1){
+		movLeft(currentIndex+1)
+	}else{
+		movLeft(0)
+	}
+})
+
+btnLeft.addEventListener('click',function(){
+	if(currentIndex>0){
+		movLeft(currentIndex-1)
+	}else{
+		movLeft(slideCount-1)
+	}
+})
+
+
+
+
+
+
+
+	// bnr2
+	// $bnr2.css('height',hig);
+	// $bnr2.animate({'top':topValue+'px'},3000);
+	// setInterval(function(){
+  //       if(num2 < slideLeng-1) {
+  //           num2++;
+  //       }
+  //       else {
+  //           num2 = 0;
+  //       }   
+  //       topValue=-(hig*num2);
+  //       $bnr2.animate({'top':topValue+'px'},1000)		
+  //   },3500)
+		
+	// // bnr3
+	// $bnr3.css('width',100*slideLeng+'%');
+	// $bnr3.animate({'left':leftValue3+'%'},3000);
+	// setInterval(function(){
+  //       if(num3 < slideLeng-1) {
+  //           num3++;
+  //       }
+  //       else {
+  //           num3 = 0;
+  //       }   
+  //       leftValue3=-100*num3;
+  //       $bnr3.animate({'left':leftValue3+'%'},1000)		
+  //   },3500)		
+
+</script>
+</body>
+</html>

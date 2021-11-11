@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>slider_leftRight</title>
+	<script src="script/jquery-1.12.4.js"></script>
+	<style>
+img{vertical-align: top;}
+.bnrs_wrap{display: flex;}
+.bnrs_wrap>div{margin: 10px;}
+/* leftRight */
+.bnr1 .sliderTrack{
+	position: relative; overflow: hidden;
+	width: 310px; height: 175px;
+	border: 1px solid rgb(218, 218, 218);
+}
+.bnr1 .sliders{
+	display: flex;  
+	position: absolute; top:0; left:0;
+}
+.bnr1 .btns{
+	display: flex; 	justify-content:space-between; align-items: center;
+	position: absolute; top:50%; left:0; 
+	width: 100%; transform: translateY(-50%);
+}
+
+/* bottomTop */
+.bnr2 .sliderWrap{
+	position: relative;	width: 380px; 
+	border: 1px solid rgb(216, 213, 213);}
+.bnr2 .sliderTrack{
+	width: 310px; height: 175px;
+	position: relative; overflow: hidden;
+	border: 1px solid rgb(218, 218, 218);
+	margin: 0 auto;
+}
+.bnr2 .sliders{position: absolute; top:0; left:0;}
+.bnr2 .btns{
+	display: flex; 	justify-content:space-between; align-items: center;
+	position: absolute; top:50%; left:0; 
+	width: 100%; transform: translateY(-50%);
+}
+
+button{ cursor:pointer; background: transparent; border:solid 1px #ddd; width: 24px; height: 24px;text-align: center; padding: 0;}
+button>img{width: 100%;}
+
+/* bottomTop */
+.bnr3 .sliderWrap{
+	position: relative;	width: 310px; height: 250px; top:0; right:0;}
+.bnr3 .sliderTrack{
+
+	position: relative; overflow: hidden;
+	width: 310px; height: 175px;top:0; left:0;
+	border: 1px solid rgb(218, 218, 218);
+	margin: 0 auto;
+}
+.bnr3 .sliders{position: absolute; top:0; left:0; display: flex;}
+.bnr3 .btns{
+	display: flex; justify-content:center; align-items: center;
+}
+.bnr3 button{margin: 10px;}
+</style>
+</head>
+<body>
+<div class="bnrs_wrap">
+	<!-- bnr1 leftRight-->
+	<div class="bnr1">
+		<h4>slider_leftRight</h4>
+		<div class="sliderTrack ">
+			<div class="sliders">
+				<a href="#none"><img src="img/bnr1.png" alt=""></a>
+				<a href="#none"><img src="img/bnr2.png" alt=""></a>
+				<a href="#none"><img src="img/bnr3.png" alt=""></a>
+				<a href="#none"><img src="img/bnr4.png" alt=""></a>
+				<a href="#none"><img src="img/bnr2.png" alt=""></a>
+			</div>
+			<!-- btns-->
+			<div class="btns">
+				<a href="#none"><img src="img/leftArrow.svg" alt=""></a>
+				<a href="#none"><img src="img/rightArrow.svg" alt=""></a>
+			</div>
+		</div><!--e:sliderWrap-->
+	</div>
+	<!-- bnr2 bottomTop-->
+	<div class="bnr2">
+		<h4>slider_topBottom</h4>
+		<div class="sliderWrap">
+			<!-- btns-->
+			<div class="btns">
+				<button><img src="img/leftArrow.svg" alt=""></button>
+				<button><img src="img/rightArrow.svg" alt=""></button>
+			</div>
+			<!-- sliderTrack -->
+			<div class="sliderTrack">
+				<div class="sliders">
+					<a href="#none"><img src="img/bnr1.png" alt=""></a>
+					<a href="#none"><img src="img/bnr2.png" alt=""></a>
+					<a href="#none"><img src="img/bnr3.png" alt=""></a>
+					<a href="#none"><img src="img/bnr4.png" alt=""></a>
+					<a href="#none"><img src="img/bnr2.png" alt=""></a>
+				</div>
+			</div>
+			<!-- indicator -->
+		</div>
+	</div><!--e:bnr2-->
+	<!-- bnr3 -->
+	<div class="bnr3">
+		<h4>slider_leftRight</h4>
+		<div class="sliderWrap">
+			<!-- sliderTrack -->
+			<div class="sliderTrack">
+				<div class="sliders">
+					<a href="#none"><img src="img/bnr1.png" alt=""></a>
+					<a href="#none"><img src="img/bnr2.png" alt=""></a>
+					<a href="#none"><img src="img/bnr3.png" alt=""></a>
+					<a href="#none"><img src="img/bnr4.png" alt=""></a>
+					<a href="#none"><img src="img/bnr2.png" alt=""></a>
+				</div>
+			</div>
+				<!-- btns-->
+				<div class="btns">
+					<button><img src="img/leftArrow.svg" alt=""></button>
+					<button><img src="img/rightArrow.svg" alt=""></button>
+				</div>
+			<!-- indicator -->
+		</div><!--e:sliderWrap-->
+	</div><!--e:bnr3-->
+</div><!--e:bnrs_wrap-->
+<script>
+$(function(){
+	
+	let $slide=$('.bnr1 .sliders>a');
+	let slideLeng=$slide.length; //3
+
+	let num1=0;
+	let leftValue=0;
+	let $bnr1=$('.bnr1 .sliders');
+
+	let num2=0;
+	let topValue=0;
+	let $bnr2=$('.bnr2 .sliders');
+	let hig=175;
+
+	let leftValue3=0;
+	let $bnr3=$('.bnr3 .sliders');
+	let num3=0;
+
+	console.log(slideLeng);
+	// bnr1
+	$bnr1.css('width',100*slideLeng+'%');
+	$bnr1.animate({'left':leftValue+'%'},3000);
+	setInterval(function(){
+        if(num1 < slideLeng-1) {
+            num1++;
+        }
+        else {
+            num1 = 0;
+        }   
+        leftValue=-100*num1;
+        $bnr1.animate({'left':leftValue+'%'},1000)		
+    },3500)
+
+	// bnr2
+	$bnr2.css('height',hig);
+	$bnr2.animate({'top':topValue+'px'},3000);
+	setInterval(function(){
+        if(num2 < slideLeng-1) {
+            num2++;
+        }
+        else {
+            num2 = 0;
+        }   
+        topValue=-(hig*num2);
+        $bnr2.animate({'top':topValue+'px'},1000)		
+    },3500)
+		
+	// bnr3
+	$bnr3.css('width',100*slideLeng+'%');
+	$bnr3.animate({'left':leftValue3+'%'},3000);
+	setInterval(function(){
+        if(num3 < slideLeng-1) {
+            num3++;
+        }
+        else {
+            num3 = 0;
+        }   
+        leftValue3=-100*num3;
+        $bnr3.animate({'left':leftValue3+'%'},1000)		
+    },3500)		
+	})
+</script>
+</body>
+</html>
